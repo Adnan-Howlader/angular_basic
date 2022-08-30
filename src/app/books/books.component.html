@@ -1,0 +1,18 @@
+<h2>Programming book list</h2>
+<button (click)="showBooks()">show books</button>
+
+<p [textContent]="text"></p>
+<ul *ngIf="isShowing">
+  <li>
+    <img src="{{src}}" alt="{{name}}" id="clean-code">
+    {{name}}
+    {{author}}
+    
+    
+  </li>
+  <li>
+    <img src="{{src2}}" alt="{{name}}" id="clean-architecture">
+    {{name2}}
+    {{author2}}
+  </li>
+</ul>
