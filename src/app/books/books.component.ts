@@ -1,22 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Book {
+  name: string;
+  author: string;
+  src: string;
+}
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-  name:string;
-  author: string;
-  src:string;
+  
+  
   isdisabled:boolean;
 
-  name2:string;
-  author2:string;
-  src2:string;
+
   text!:string;
   input:any;
   isShowing!:boolean;
+  show_books!:string;
+  books!:Book[]
   printSomething(){
     this.isdisabled=true;
   }
@@ -29,22 +34,42 @@ export class BooksComponent implements OnInit {
   showBooks(){
 
     this.isShowing=!this.isShowing;
+    if(this.isShowing){
+      this.show_books="Hide books";
+    }
+    else{
+      this.show_books="Show books";
+    }
   }
+
     
 
   
 
   constructor() {
+    this.books=[ //this is the buggy code 
+      {
+        name:"clean code",
+        author:"Robert C. Martin",
+        src:"https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg"
+       
+      
+       },
+       {
+        name:"Elements of Programming Interviews ",  
+        author:"Martin Fowles",
+        src:"https://images-na.ssl-images-amazon.com/images/I/41CUbGSthHL._SX348_BO1,204,203,200_.jpg"
+       }
+    ]
     this.isdisabled=false;
-    this.name='clean code';
-    this.author='Robert C. Martin';
-    this.src='../../assets/clean code.jpg';
-    this.author2='Robert C. Martin';
-    this.name2='clean architecture';
+   
+ 
     this.text='';
     this.isShowing=false;
+    this.show_books='show books'; 
    
-    this.src2='https://images-na.ssl-images-amazon.com/images/I/41-sN-mzwKL._SX258_BO1,204,203,200_.jpg';
+
+   
    }
 
 

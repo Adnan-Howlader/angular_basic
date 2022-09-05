@@ -1,18 +1,30 @@
 <h2>Programming book list</h2>
-<button (click)="showBooks()">show books</button>
+<button (click)="showBooks()">{{show_books}}</button>
 
 <p [textContent]="text"></p>
 <ul *ngIf="isShowing">
-  <li>
-    <img src="{{src}}" alt="{{name}}" id="clean-code">
-    {{name}}
-    {{author}}
-    
-    
-  </li>
-  <li>
-    <img src="{{src2}}" alt="{{name}}" id="clean-architecture">
-    {{name2}}
-    {{author2}}
-  </li>
+  <ng-container *ngFor="let book of books;let i=index">
+    <div class="book">
+
+      <li >
+      
+        <img [src]="book.src" [alt]="book.name" class="book-pic">
+        <p>{{book.name | titlecase}} by</p>
+        <p>{{book.author | titlecase}}</p>
+        
+        <div>
+          <button>Add to cart</button>
+        </div>
+        
+        
+        
+      </li>
+    </div>
+
+
+
+  </ng-container>
+
+
+  
 </ul>

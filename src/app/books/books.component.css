@@ -1,15 +1,15 @@
-#clean-code{
-    /*decrease the image size*/
+.book-pic{
+    /*make the image fit*/
+   height: 200px;
     width: 200px;
-    height: 100px;
-
-
-
 
 }
-#clean-architecture{
-    /*decrease the image size*/
-    width: 100px;
-    height: 100px;
-    padding: 10px;
+ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.book{
+  
+    padding: 20px;
+  
 }
